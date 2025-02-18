@@ -22,10 +22,23 @@ public class CursorManager : MonoBehaviour
         }
     }
 
+
+    public void ShowAndUnlockCursor()
+    {
+        UnlockCursor();
+        ShowCursor();
+    }
+
+    public void HideAndLockCursor()
+    {
+        HideCursor();
+        LockCursor();
+    }
+
     /// <summary>
     /// Affiche le curseur.
     /// </summary>
-    public void ShowCursor()
+    private void ShowCursor()
     {
         Cursor.visible = true;
     }
@@ -33,7 +46,7 @@ public class CursorManager : MonoBehaviour
     /// <summary>
     /// Cache le curseur.
     /// </summary>
-    public void HideCursor()
+    private void HideCursor()
     {
         Cursor.visible = false;
     }
@@ -41,7 +54,7 @@ public class CursorManager : MonoBehaviour
     /// <summary>
     /// Verrouille le curseur au centre de l'écran.
     /// </summary>
-    public void LockCursor()
+    private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -49,7 +62,7 @@ public class CursorManager : MonoBehaviour
     /// <summary>
     /// Déverrouille le curseur et le rend libre.
     /// </summary>
-    public void UnlockCursor()
+    private void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
     }
